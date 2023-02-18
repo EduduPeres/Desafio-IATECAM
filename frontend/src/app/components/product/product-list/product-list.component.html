@@ -1,0 +1,24 @@
+<h2 class="text-center m-5">Products</h2>
+   <table class="table">
+       <thead>
+           <tr>
+               <th>Name</th>
+               <th>Category</th>
+               <th>Price</th>
+               <th>Serie</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr *ngFor="let product of products$ | async">
+               <td class=text-center>{{product.name}}</td>
+               <td class=text-center>{{product.category}}</td>
+               <td class=text-center>{{product.price}}</td>
+               <td class=text-center>{{product.serie}}</td>
+               <td>
+                   <button class="blue-btn" [routerLink]="['edit/', product.id]">Edit</button>
+                   <button class="red-btn" (click)="deleteProduct(product.id || -1)">Delete</button>
+               </td>
+           </tr>
+       </tbody>
+   </table>
+   <button class="blue-btn" [routerLink]="['new']">Add New Product</button>

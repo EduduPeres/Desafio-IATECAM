@@ -1,0 +1,19 @@
+
+button{
+	// width:100%;
+	padding:0.5;margin:0.9em;
+	color:white;
+	background:none;
+    border-radius: 2px;
+    border:none;
+    cursor:pointer;
+    float:right;
+}
+button.blue-btn{
+	color:white;
+    background-color: #0d6efd;
+}
+button.red-btn{
+	color:white;
+    background-color: #dc3545;
+}

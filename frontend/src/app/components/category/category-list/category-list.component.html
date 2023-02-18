@@ -1,0 +1,20 @@
+<h2 class="text-center m-5">Categorias</h2>
+   <table class="table">
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Name</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr *ngFor="let category of categories$ | async">
+               <td class=text-center>{{category.id}}</td>
+               <td class=text-center>{{category.name}}</td>
+               <td>
+                   <button class="blue-btn" [routerLink]="['edit', category.id]">Edit</button>
+                   <button class="red-btn" (click)="deleteCategory(category.id || -1)">Delete</button>
+               </td>
+           </tr>
+       </tbody>
+   </table>
+   <button class="blue-btn" [routerLink]="['new']">Add New Category</button>
